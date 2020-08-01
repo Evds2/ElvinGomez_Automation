@@ -1,0 +1,19 @@
+{
+  "name": "elvingomez_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evds2/ElvinGomez_Automation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Evds2/ElvinGomez_Automation/issues"
+  },
+  "homepage": "https://github.com/Evds2/ElvinGomez_Automation#readme"
+}
