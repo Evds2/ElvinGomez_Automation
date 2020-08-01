@@ -12,11 +12,11 @@ class navigationPage extends Page {
     get signUpLink () { return $('*=up') }
 
     goToSignIn(){
-        this.signInLink().click();
+        this.signInLink.click();
     }
 
     goToSignUp(){
-        this.signUpLink().click();
+        this.signUpLink.click();
     }
 
     getConduitText(){
