@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Evds2/ElvinGomez_Automation/issues"
   },
-  "homepage": "https://github.com/Evds2/ElvinGomez_Automation#readme"
+  "homepage": "https://github.com/Evds2/ElvinGomez_Automation#readme",
+  "devDependencies": {
+    "@wdio/cli": "^6.3.6"
+  }
 }
