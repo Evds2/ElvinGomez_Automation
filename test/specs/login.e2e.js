@@ -25,7 +25,7 @@ describe('My Login application', () => {
         //expect(DashboardPage.getYourFeedTab()).toHaveAttribute('class', 'nav-link active');
         expect(DashboardPage.getGlobalFeedTab()).toHaveClass('active', {message: 'Not active tab!', });
         //expect(DashboardPage.getGlobalFeedTab()).not.toHaveProperty('height', '42px');
-        expect(DashboardPage.getGlobalFeedTab()).toBeClickable()
+        expect(DashboardPage.getGlobalFeedTab()).toBeClickable();
     });
 
 });
