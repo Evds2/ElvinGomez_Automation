@@ -3,8 +3,11 @@ const Page = require('./page');
 class dashboardPage extends Page {
 
     get noArticlesLabel () { return $("//*[@class='article-preview']") }
+    //elemento con selector className y text
     get yourFeedTab () {return $("//*[@class='nav-link active']")}
     get globalFeedTab() {return $('.nav-link=Global Feed')}
+    //Concatenacion de elementos
+    get articlesRows() {return $('<article-list />').$$('<article-preview />')}
     
     getNoArticlesLabel(){
         return this.noArticlesLabel;
@@ -16,6 +19,10 @@ class dashboardPage extends Page {
     
     getGlobalFeedTab(){
         return this.globalFeedTab;
+    }
+
+    getArticlesList(){
+        return this.articlesRows;
     }
 }
 

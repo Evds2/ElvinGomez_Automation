@@ -20,12 +20,14 @@ describe('My Login application', () => {
     //     expect(DashboardPage.getYourFeedTab()).toHaveAttribute('class', 'nav-link active');
     // });
 
-    it('should go to another tap', () => {
+    it('should go to another tab', () => {
         dashboardPage.getGlobalFeedTab().click();
-        //expect(DashboardPage.getYourFeedTab()).toHaveAttribute('class', 'nav-link active');
+        browser.pause(3500);
         expect(DashboardPage.getGlobalFeedTab()).toHaveClass('active', {message: 'Not active tab!', });
-        //expect(DashboardPage.getGlobalFeedTab()).not.toHaveProperty('height', '42px');
-        expect(DashboardPage.getGlobalFeedTab()).toBeClickable();
+        console.log('Get Size:  ' +DashboardPage.getArticlesList().length);
+        //expect(DashboardPage.getGlobalFeedTab()).toBeClickable();
+        //assert para ver si la lista hace match con el limit 10 que sale a nivel del codigo en la pagina
+        expect(DashboardPage.getArticlesList()).toBeElementsArrayOfSize({eq: 10});
     });
 
 });
