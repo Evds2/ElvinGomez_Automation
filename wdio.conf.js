@@ -190,8 +190,9 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
      */
-    // beforeSuite: function (suite) {
-    // },
+     beforeSuite: function (suite) {
+        browser.url(`https://demo.realworld.io/#/`)
+     },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */

@@ -8,6 +8,7 @@ class dashboardPage extends Page {
     get globalFeedTab() {return $('.nav-link=Global Feed')}
     //Concatenacion de elementos
     get articlesRows() {return $('<article-list />').$$('<article-preview />')}
+    get articlesReadMore() {return $('<article-list />').$$('<article-preview />')[1].$('span=Read more...')}
     
     getNoArticlesLabel(){
         return this.noArticlesLabel;
@@ -23,6 +24,10 @@ class dashboardPage extends Page {
 
     getArticlesList(){
         return this.articlesRows;
+    }
+
+    getArticlesReadMore(){
+        return this.articlesReadMore;
     }
 }
 
