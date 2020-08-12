@@ -2,7 +2,7 @@ const LoginPage = require('../pageobjects/login.page');
 const NavigationPage = require('../pageobjects/navigation.page')
 const DashboardPage = require('../pageobjects/dashboard.page');
 const dashboardPage = require('../pageobjects/dashboard.page');
-//const waits = require('../helpers/waits')
+//const wait = require('../helpers/waits')
 const ArticleDetailPage = require('../pageobjects/articleDetail.page')
 const { getGlobalFeedTab } = require('../pageobjects/dashboard.page');
 
@@ -48,8 +48,13 @@ describe('My Login application', () => {
 
     it('should add a description', () => {
         browser.setTimeout({'implicit': 1000});
-        ArticleDetailPage.getDescriptionTextBox().setValue('Hola');
-        browser.pause(5000);
+        //ArticleDetailPage.getDescriptionTextBox().setValue('Hola');
+        //ArticleDetailPage.getPostCommentButton().click();
+        browser.pause(2000);
+        browser.setTimeout({'implicit': 1000});
+        ArticleDetailPage.getDeleteCommentButton().click();
+        browser.pause(2000);
+        
         
     })
 });
