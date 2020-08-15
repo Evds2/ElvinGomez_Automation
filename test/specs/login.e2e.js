@@ -5,6 +5,7 @@ const dashboardPage = require('../pageobjects/dashboard.page');
 //const wait = require('../helpers/waits')
 const ArticleDetailPage = require('../pageobjects/articleDetail.page')
 const { getGlobalFeedTab } = require('../pageobjects/dashboard.page');
+const user = require('../data/user');
 
 describe('My Login application', () => {
     it('should login with valid credentials', () => {
@@ -12,7 +13,8 @@ describe('My Login application', () => {
         browser.maximizeWindow();
         NavigationPage.goToSignIn();
         console.log(NavigationPage.getConduitText());
-        LoginPage.login("alex.gonzalez@ucreativa.com", "Test1234");
+        //LoginPage.login("alex.gonzalez@ucreativa.com", "Test1234");
+        LoginPage.login(user[0].email, user[0].password);
         //waits.waitUntilElementIsDisplayed(DashboardPage.getNoArticlesLabel());
         expect(browser).toHaveUrl('https://demo.realworld.io/#/');
         //expect(browser).toHaveTitle('Home — Conduit');
@@ -27,6 +29,8 @@ describe('My Login application', () => {
         browser.setTimeout({'pageload': 1});
         dashboardPage.getGlobalFeedTab().click();
         browser.setTimeout({'implicit': 1000});
+        //adding screenshot to the project
+        browser.saveScreenshot('/Users/el_gc/Documents/ElvinGomez_Automation/test/resources/sc/testcase2.png');
         /*browser.waitUntil(
             () => DashboardPage.getArticlesList()[1].isDisplayed(),
             {
@@ -48,8 +52,8 @@ describe('My Login application', () => {
 
     it('should add a description', () => {
         browser.setTimeout({'implicit': 1000});
-        //ArticleDetailPage.getDescriptionTextBox().setValue('Hola');
-        //ArticleDetailPage.getPostCommentButton().click();
+        ArticleDetailPage.getDescriptionTextBox().setValue('Hola');
+        ArticleDetailPage.getPostCommentButton().click();
         browser.pause(2000);
         browser.setTimeout({'implicit': 1000});
         ArticleDetailPage.getDeleteCommentButton().click();
